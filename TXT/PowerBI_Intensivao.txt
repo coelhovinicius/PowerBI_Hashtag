@@ -8,7 +8,8 @@ Ao final de cada aula, preencher o formulário da aula.
 
 Aula 1 - 18/09/2023 - Palavra-chave: Vendas18
 
-Baixar a apostila
+Baixar a apostila - OK
+Baixar planilha da aula 1 - OK
 
 Power BI pode ser utilizado em qualquer área que necessite tomar decisões através de Análise de Dados.
 
@@ -41,10 +42,11 @@ Na maioria das vezes, selecionamos o botão "Transformar Dados".
 	> No delimitador, colocar "espaço" hífen "espaço";
 	> Para desfazer essa separação, não funciona o CRTL+Z. Devemos ir no menu à direita "Etapas Aplicadas". Lá, tem a descrição de tudo o que foi feito. Clicando no "x" à esquerda da etapa, exclui a etapa aplicada.
 
-- Incluir uma coluna de Valor Total para cada linha, fazendo o Preço Unitário multiplicado pela Quantidade Vendida:
+- Incluir uma coluna de Faturamento, fazendo o Preço Unitário multiplicado pela Quantidade Vendida:
 	> Guia Adicionar Coluna - Seleciona as duas colunas, segurando a tecla CTRL;
 	> Botão "Padrão" e Multiplicar;
 	> Mudar o nome da coluna para "Faturamento";
+>>>>>>>>> Alterar os dados dessa coluna para "$" - Número Decimal Fixo; <<<<<<<<<
 
 - Alterar a coluna Nome Cliente, para que o nome apareça na ordem correta:
 	> Selecionar a coluna Nome do Cliente;
@@ -59,13 +61,13 @@ Na maioria das vezes, selecionamos o botão "Transformar Dados".
 - Etapas Aplicadas permite a Automatização de Processos:
 	> Podemos aplicar as mesmas etapas em planilhas novas, desde que sejam do mesmo tipo da tabela original (as mesmas Colunas).
 
+>>>>>>>>> Ainda no Power Qwery, classificar a coluna Data da Venda por data em ordem crescente - Clicar na seta para baixo, ao lado do nome da coluna Data da Venda e classificar em ordem crescente. <<<<<<<<<
+
 - Botão Fechar e Aplicar.
 
-- Para voltar do Power BI para o Power Query, clicar no botão de modificar dados.
+- Se for necessário voltar ao Power Query, clicar no botão Transformar Dados.
 
-- No Power BI, classificar por data em ordem crescente.
-
-Analises possíveis:
+Análises possíveis:
 - Produto mais vendido;
 - Faturamento total;
 - Faturamento por região;
@@ -87,6 +89,10 @@ Analises possíveis:
 	> Geral - Opção Título e escrever o título desejado e as cores de fundo, Cor do Texto, Alinhamento;
 	> Também há opções de Efeitos, como Bordas e Sombreamento;
 	> Alterar a formatação da coluna Faturamento para formato Moeda - Português (Brasil) - para aparecer o "R$" e colocar com duas casas decimais;
+	> Para isso, com o cartão selecionado, selecionar a coluna Faturamento no campo Dados à direita;
+	> Aparecerá o menu Ferramentas de Coluna - selecionar esse menu;
+	> Clicar no botão de "$" no menu que fica na parte superior e selecionar Português (Brasil);
+	> Ao lado, deixar as Casas Decimais como "2".
 	
 - Análises:
 
@@ -94,19 +100,21 @@ Analises possíveis:
 	> Fazer outro cartão;
 	> Arrastar a coluna de Produto para os Campos do novo cartão;
 	> Aparecerá o primeiro produto em ordem alfabética - devemos expecificar o que queremos;
-	> Queremos o primeiro em ordem de mais vendidos: Filtros Neste Visual;
-	> Jogar a informação de Produto para dentro do filtro - N superior;
-	> Em Valores, arrastar a Quantidade Vendida para esse campo;
+	> Queremos o primeiro em ordem de mais vendidos;
+	> Em Filtros, Jogar a informação de Produto para dentro do filtro - N superior;
+	> Em Mostrar Itens, deixar como Superior e, na caixa ao lado, colocar "1";
+	> Em Por Valor, arrastar a Quantidade Vendida para esse campo;
+	> Clicar em Aplicar Filtro;
 	> Alterar as formatações à gosto - para copiar a formatação do primeiro cartão, utilizamos o Pincel de Formatação;
 	> Clicar no cartão a copiar a formatação - Pincel de Formatação - clicar no cartão novo;
 	> Manter o mesmo tamanho e espaçamento nos cartões, para melhor apresentação.
 
 - Ranking de melhores marcas:
-	> Utilizar gráfico de barras;
+	> Utilizar gráfico de Barras Empilhadas;
 	> Clicar no Gráfico de Barras;
-	> Eixo X - arrastar Números;
+	> Eixo X - arrastar Faturamento;
 	> Eixo Y - arrastar Marcas;
-	> Incluir o Rótulo de Dados na aba Dados;
+	> Incluir o Rótulo de Dados na aba Visualizações - Visual;
 	> Formatar os dados - Tirar o eixo X para ficar melhor formatado;
 	> Padronizar a formatação do Título do gráfico;
 	> Colocar a porcentagem(?);
@@ -134,6 +142,8 @@ Analises possíveis:
 
 - Mudar de Oceania para Australia (pois dá um bug quando está como Oceania):
 	> Trocar Oceania por Austrália;
+	> Selecionar a coluna;
+	> Substitui Valores e aplicar a substituição;
 	> Fechar e aplicar;
 
 
