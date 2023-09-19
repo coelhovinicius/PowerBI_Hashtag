@@ -1,0 +1,146 @@
+Power BI - Intensivão Hashtag Treinamentos
+
+A cada aula, será dado o código para tirar a certificação.
+
+Ao final de cada aula, preencher o formulário da aula.
+
+-----------------------------------------------------------------
+
+Aula 1 - 18/09/2023 - Palavra-chave: Vendas18
+
+Baixar a apostila
+
+Power BI pode ser utilizado em qualquer área que necessite tomar decisões através de Análise de Dados.
+
+A extensão do arquivo Power BI é .pbix.
+
+- Dashboard: Relatório do Power BI;
+- Guia Tabela:
+- Guia Dados: 
+- Guia Modelo: Possibilida a Integração de Tabelas.
+
+- Menu Obter Dados: Importar os dados: Podem ser arquivos .xlsx, .csv, Google Sheets, etc., SQL Server, etc..
+
+- Baixar a tabela de Vendas em ecxel disponibilizada num link na aula no YouTube.
+Na maioria das vezes, selecionamos o botão "Transformar Dados".
+
+- Power Query - Tabela dentro do Power BI, utilizada, normalmente, para a Sanitização dos Dados. Tratamos os dados para que sejam manipuláveis sem erros pelo Power BI.
+
+- As alterações feitas no Power Query não são salvas automaticamente no arquivo da tabela de Vendas do Excel.
+
+- Trocar o nome da Planilha1 para BaseVendas:
+	> Olhar todas as colunas da tabela e verificar se há colunas que possam ser excluídas;
+	> Para excluir, clicar na coluna e dar Delete, ou clicar com o botão direito e excluir;
+	> Excluir "colunas em branco" e "linhas totalmente em branco".
+
+- Botão Reduzir Linhas - Remover Linhas em Branco. Exclui linhas que não tenham informações em nenhuma de suas colunas.
+
+- Não é interessante ter dois tipos de informações dentro da mesma coluna, como no exemplo da coluna Localidade, que tem o nome do país hífen o nome do continente desse país:
+	> Separar a coluna Localidade em duas - Clicar na coluna - Guias Transformar ou Adicionar Colunas, dependendo do caso;
+	> Nesse caso, utilizaremos Transformar - Dividir Coluna. No caso, o Delimitador é o Hífen e os Espaços;
+	> No delimitador, colocar "espaço" hífen "espaço";
+	> Para desfazer essa separação, não funciona o CRTL+Z. Devemos ir no menu à direita "Etapas Aplicadas". Lá, tem a descrição de tudo o que foi feito. Clicando no "x" à esquerda da etapa, exclui a etapa aplicada.
+
+- Incluir uma coluna de Valor Total para cada linha, fazendo o Preço Unitário multiplicado pela Quantidade Vendida:
+	> Guia Adicionar Coluna - Seleciona as duas colunas, segurando a tecla CTRL;
+	> Botão "Padrão" e Multiplicar;
+	> Mudar o nome da coluna para "Faturamento";
+
+- Alterar a coluna Nome Cliente, para que o nome apareça na ordem correta:
+	> Selecionar a coluna Nome do Cliente;
+	> Guia Adicionar Coluna - Coluna de Exemplos - De Seleção;
+	> Abre uma coluna nova - Devemos digitar como queremos que seja exibido o nome à partir do primeiro nome, por exemplo, de "P., Vicente" para Vicente P.;
+	> Fazer o mesmo com o segundo nome - Assim, o Power BI irá gerar um preenchimento automático;
+	> Mudar o nome da coluna nova para Cliente;
+	> Excluir a coluna Nome Cliente.
+
+- O Power BI mantém todas as alterações no histórico das Etapas Aplicadas.
+
+- Etapas Aplicadas permite a Automatização de Processos:
+	> Podemos aplicar as mesmas etapas em planilhas novas, desde que sejam do mesmo tipo da tabela original (as mesmas Colunas).
+
+- Botão Fechar e Aplicar.
+
+- Para voltar do Power BI para o Power Query, clicar no botão de modificar dados.
+
+- No Power BI, classificar por data em ordem crescente.
+
+Analises possíveis:
+- Produto mais vendido;
+- Faturamento total;
+- Faturamento por região;
+- Faturamento por marca;
+- Faturamento mensal.
+
+- Devemos começar pelas análises mais simples, que dependam de um tipo de dado.
+
+- Visualizações - Aba à direita com diversos tipos de gráficos.
+	> Para uma única informação, selecionar Cartão;
+	> Redimensionar e organizar conforme desejado;
+	> Campos do cartão: Arrastar a coluna desejada (Faturamento) para essa área Campos;
+	> Por padrão, o Power BI fará a somatória todos os valores da coluna Faturamento.
+
+- Cartão - Formatação:
+	> Guia Visualizações - Visual ou Geral;
+	> Cor do fundo - Geral - Efeitos e selecionar a cor desejada, transparência, etc.;
+	> Tirar a legenda de baixo no cartão e colocar um título - Visual - Rótulo da Categoria;
+	> Geral - Opção Título e escrever o título desejado e as cores de fundo, Cor do Texto, Alinhamento;
+	> Também há opções de Efeitos, como Bordas e Sombreamento;
+	> Alterar a formatação da coluna Faturamento para formato Moeda - Português (Brasil) - para aparecer o "R$" e colocar com duas casas decimais;
+	
+- Análises:
+
+- Produto mais vendido:
+	> Fazer outro cartão;
+	> Arrastar a coluna de Produto para os Campos do novo cartão;
+	> Aparecerá o primeiro produto em ordem alfabética - devemos expecificar o que queremos;
+	> Queremos o primeiro em ordem de mais vendidos: Filtros Neste Visual;
+	> Jogar a informação de Produto para dentro do filtro - N superior;
+	> Em Valores, arrastar a Quantidade Vendida para esse campo;
+	> Alterar as formatações à gosto - para copiar a formatação do primeiro cartão, utilizamos o Pincel de Formatação;
+	> Clicar no cartão a copiar a formatação - Pincel de Formatação - clicar no cartão novo;
+	> Manter o mesmo tamanho e espaçamento nos cartões, para melhor apresentação.
+
+- Ranking de melhores marcas:
+	> Utilizar gráfico de barras;
+	> Clicar no Gráfico de Barras;
+	> Eixo X - arrastar Números;
+	> Eixo Y - arrastar Marcas;
+	> Incluir o Rótulo de Dados na aba Dados;
+	> Formatar os dados - Tirar o eixo X para ficar melhor formatado;
+	> Padronizar a formatação do Título do gráfico;
+	> Colocar a porcentagem(?);
+	> Os gráficos são integrados: Clicando em cada barra, mudam as informações dos cartões;
+	
+- Faturamento e Vendas Mensal:
+	> Fazer um gráfico combinado de Colunas com Linhas;
+	> Eixo X da coluna - Arrastar as Datas e excluir os tipos de análise que não são necessárias;
+	> Eixo Y da linha - tempo;
+	> Fazer a formatação como no gráfico anterior;
+	> Mudar a cor do gráfico de linha na opção Visual - Linhas. Isso serve para destacar a linha e ficar melhor de ser visualizada;
+	> Quando selecionamos a marca no gráfico anterior, irá realçar a venda dessa marca, porém, manterá os outros;
+	> Arquivo, Opções e Configurações, Opções - Na última opção à esquerda - Alterar a interação dos graficos de Realce para Filtragem.
+
+- Faturamento por Região:
+	> Gráfico de Mapa (ícone de um globo);
+	> Localização: Arrastar a coluna de Continente (ou País);
+	> Mudar o tamanho das Bolhas em Tamanho da Bolha - Arrastar o Faturamento e aumentar a proporção;
+	> Copiar a formatação do gráfico de barras com o Pincel de Formatação.
+
+- Podemos combinar mais de um filtro:
+	> Selecionar o que quiser, clicar em CTRL e clicar o outro filtro que você quiser.
+
+- Podemos praticar com outras bases de dados, como, por exemplo, as da aula de Python da Hashtag Treinamentos.
+
+- Mudar de Oceania para Australia (pois dá um bug quando está como Oceania):
+	> Trocar Oceania por Austrália;
+	> Fechar e aplicar;
+
+
+>>> Sempre se atentar ao alinhamento das informações no Power BI, com espaçamento padronizado entre eles <<<
+
+-----------------------------------------------------------------
+
+Aula 2 - 19/09/2023 - Palavra-chave: 
+
+
