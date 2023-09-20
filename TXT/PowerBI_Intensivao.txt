@@ -6,7 +6,7 @@ Ao final de cada aula, preencher o formulário da aula.
 
 -----------------------------------------------------------------
 
-Aula 1 - 18/09/2023 - Palavra-chave: Vendas18
+Aula 1 - 18/09/2023 - Dashboard de Vendas - Palavra-chave: Vendas18
 
 Baixar a apostila - OK
 Baixar planilha da aula 1 - OK
@@ -149,8 +149,119 @@ Análises possíveis:
 
 >>> Sempre se atentar ao alinhamento das informações no Power BI, com espaçamento padronizado entre eles <<<
 
------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------
 
-Aula 2 - 19/09/2023 - Palavra-chave: 
+Aula 2 - 19/09/2023 - Dashboard de Produção - Palavra-chave: Prod30
+
+O PowerBI não reconhece fórmulas do Excel do arquivo importado, ele apenas apresenta o resultado das fórmulas.
+A lógica das fórmulas do PowerBI é diferente da lógica das fórmulas do Excel.
+
+- Site color-hex.com - Palletes - Popular Palletes - cor #008080 - Azul Petróleo ou qualquer outra que seja pertinente.
+
+- Site mycolor.space - Encontrar cores que combinam no design - colar o código Hex da cor e o site irá mostrar gradientes de corse que combinam com essa cor.
+
+- Site flaticon.com - site com ícones grátis - pesquisar, por exemplo, por Manufactor, Production, Clock, etc. - fazer login gratuito para edição desses ícones e deixar com uma cor que dê para ser vizualizado com o fundo da nossa Dashboard.
+
+- Calculate() é a fórmula mais importante do PowerBI.
+
+- Coluna Ocorrência - Quando vazia, está em produção.
+
+Análise:
+- Qtd. Produzida;
+- Quantidade produzida ao logo do tempo;
+- Quantidade Rejeitada;
+- % de Qualidade de Produção;
+- % de Produtividade;
+- Tempo de Inatividade (total de horas que não houve produção);
+- Total de Horas Produtivas (total de horas que houve produção);
+- Total de Horas Trabalhadas;
+- Obs.: As informações dos Indicadores são definidos pela empresa - no caso, indicadores de produção - podemos ver no Google quais são os indicadores utilizados para esse tipo de Dashboard.
+
+- Fórmulas no PowerBI:
+	> Criando fórmulas, elas podem ser reaproveitadas;
+	> Clicar com o botão direito em qualquer lugar da tabela no PowerBI;
+	> Selecionar Nova Medida;
+	> Antes do sinal de =, colocar Total Produzido;
+	> Depois, colocar sum(ColumnName) - Colocar o nome da coluna Qtd Produzida;
+	> Ficará: Total Produzido = SUM('BaseProdução' [Qtd Produzida]) - o TAB seleciona automaticamente;
+	> Para ver o resultado, devemos entrar na aba à esquerda Exibição de Relatório;
+	> As fórmulas do PowerBI não aparecem na tabela.
+
+- Conseguimos colocar plano de fundo pré-estabelecido para o Dashboard do PowerBI:
+	> Há diversas aulas que ensinam a criar Plano de Fundo para PowerBI;
+	> Salvar como imagem .png: CTRL+T  - Salvar como imagem .png;
+	> No Dashboard, podemos procurar o plano de fundo no PowerBI - devem ser feitos dois ajustes: Transparência para 0 e Ajuste de Imagem - Ajuste.
+
+- Criar um Cartão para o Total Produzido:
+	> Colocar a coluna Qtde Produzida para dentro do valor do cartão;
+	> Tirar o plano de fundo branco do cartão - Efeitos - Tela de fundo;
+	> Valor do Balão - deixar a cor branca e ajustar o tamanho da letra;
+	> Colocar o separador de milhar: Clicar á direita Dados e clicar no ícone "," no menu acima;
+
+- Total de Horas Trabalhadas:
+	> Fórmula: Horas Trabalhadas = SUM ('Base' [Total Horas]);
+	> Arrastar para dentro do cartão.
+
+- Total de Horas Produtivas:
+	> Somar os valores da coluna Total de Horas dependendo da coluna Qtd Produzida - se for >0, somar;
+	> Conta baseada numa condição - Calculate();
+	> Botão direito - Criar Nova Medida - Horas Produtivas = Calculate(expressão, filtro) - Conta que eu quero fazer e a condição que quer ser colocada;
+	> Horas Produtivas = Calculate(SUM('BaseProduçao'[Total Horas]), 'BaseProdução'[Qtd Produzida]>0);
+	> Arrastar essa Nova Medida para dentro do cartão.
+
+- Total de Horas Paradas:
+	> Botão direito - Nova Medida;
+	> Horas Paradas = Calculate(SUM('BaseProduçao'[Total Horas]), 'BaseProdução'[Qtd Produzida]=0);
+	> Também pode ser feitas com Horas Trabalhadas - Horas Produtivas: 
+		>> Horas Paradas = [Horas Trabalhadas]-[Horas Produtivas];
+	> Arrastar essa Nova Medida para dentro do cartão;
+	
+- Quantidade Produzida do Longo do Tempo:
+	> Usar gráfico de Colunas ou de Área ou de Linhas (deve ser na horizontal);
+	> Eixo X com os Meses e o Eixo Y com o Total Produzido;
+	> Gráfico de Área é um dos melhores para um gráfico ao longo do tempo;
+	> Remover o fundo brando - Formatação - Geral - Efeitos - Desmarcar a opção Tela de Fundo;
+	> Trocar as cores dos valores dos eixos;
+	> Rótulos de Dados - Valores - colocar branco;
+	> Tirar a vizualização do eixo Y - Fazer o mesmo com o Título;
+	> Trocar a cor da Área para condizer melhor com o fundo.
+	> Site color-hex.com - Palletes - Popular Palletes - cor #008080 - Azul Petróleo ou qualquer outra que seja pertinente;
+	> Selecionar o código e colar na opção de Cores em Mais Cores no campo Hex;
+	> Mudar o eixo Y para iniciar em 0, para corrigir a proporcionalidade dos valores - Formatação do gráfico - Eixo Y - Colocar 0 no Mínimo;
+	> Nunca começar um gráfico Fora do eixo 0;
+	> Trocar o rótulo de dados para deixar o valor com unidade em Milhares.
+
+- Percentual de Produtividade:
+	> Criar um gráfico Indicador (gráfico de velocímetro);
+	> Horas produtivas divididas pelo Total de horas trabalhadas;
+	> Criar nova medida: Produtividade = [Horas Produtivas]/[Horas Paradas]; vai dar 78,63%;
+	> Arrumar as formatações;
+
+- Percentual de Qualidade de Produção:
+	> Gráfico de "Velocímetro";
+	> Peças Boas divididas pelo Total de Peças produzidas;
+	> Baseado nas colunas Qtd Produzida versus Qtde Rejeitada;
+	> Total Produzido / (Total Produzido + Total Rejeitado);
+	> Qualidade = [Total Produzido] / ([Total Produzido]+[Total Rejeitado]);
+	> Site para encontrar cores que combinam no design - mycolor.space - colar o código Hex da cor e o site irá mostrar gradientes de cores que combinam com essa cor (#008080).
+	
+- Desempenho individual de produção por pessoa - Segmentação de Dados:
+	> Criar novo Cartão(?);
+	> Segmentação de Dados;
+	> Jogar o operador dentro de Campos;
+	> Mudar Cabeçalho para a cor branca;
+	> Valores também cor branca;
+	> Mudar o fundo da segmentação para a cor preta.
+
+- Desempenho Mensal:
+	> Copiar a Segmentação de Dados anterior e mudar para Data - Meses;
+	> 
+
+- Para selecionar mais de uma Segmentação, manter o CTRL pressionada.
+
+- Colocar os ícones no Dashboard - Inserir - Imagem;
+
+
+
 
 
