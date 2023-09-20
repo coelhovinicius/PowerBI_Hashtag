@@ -160,7 +160,7 @@ A lógica das fórmulas do PowerBI é diferente da lógica das fórmulas do Exce
 
 - Site mycolor.space - Encontrar cores que combinam no design - colar o código Hex da cor e o site irá mostrar gradientes de corse que combinam com essa cor.
 
-- Site flaticon.com - site com ícones grátis - pesquisar, por exemplo, por Manufactor, Production, Clock, etc. - fazer login gratuito para edição desses ícones e deixar com uma cor que dê para ser vizualizado com o fundo da nossa Dashboard.
+- Site flaticon.com - site com ícones grátis - pesquisar, por exemplo, por Manufactoring, Production, Clock, etc. - fazer login gratuito para edição desses ícones e deixar com uma cor que dê para ser vizualizado com o fundo da nossa Dashboard.
 
 - Calculate() é a fórmula mais importante do PowerBI.
 
@@ -175,7 +175,7 @@ Análise:
 - Tempo de Inatividade (total de horas que não houve produção);
 - Total de Horas Produtivas (total de horas que houve produção);
 - Total de Horas Trabalhadas;
-- Obs.: As informações dos Indicadores são definidos pela empresa - no caso, indicadores de produção - podemos ver no Google quais são os indicadores utilizados para esse tipo de Dashboard.
+- Obs.: As informações dos Indicadores são Definidos Pela Empresa - no caso, indicadores de produção - podemos ver no Google quais são os indicadores utilizados para esse tipo de Dashboard.
 
 - Fórmulas no PowerBI:
 	> Criando fórmulas, elas podem ser reaproveitadas;
@@ -189,7 +189,7 @@ Análise:
 
 - Conseguimos colocar plano de fundo pré-estabelecido para o Dashboard do PowerBI:
 	> Há diversas aulas que ensinam a criar Plano de Fundo para PowerBI;
-	> Salvar como imagem .png: CTRL+T  - Salvar como imagem .png;
+	> Salvar como imagem .png: CTRL+T para selecionar tudo - Salvar como imagem .png;
 	> No Dashboard, podemos procurar o plano de fundo no PowerBI - devem ser feitos dois ajustes: Transparência para 0 e Ajuste de Imagem - Ajuste.
 
 - Criar um Cartão para o Total Produzido:
@@ -204,7 +204,7 @@ Análise:
 
 - Total de Horas Produtivas:
 	> Somar os valores da coluna Total de Horas dependendo da coluna Qtd Produzida - se for >0, somar;
-	> Conta baseada numa condição - Calculate();
+	> Calculate() - Conta baseada numa condição;
 	> Botão direito - Criar Nova Medida - Horas Produtivas = Calculate(expressão, filtro) - Conta que eu quero fazer e a condição que quer ser colocada;
 	> Horas Produtivas = Calculate(SUM('BaseProduçao'[Total Horas]), 'BaseProdução'[Qtd Produzida]>0);
 	> Arrastar essa Nova Medida para dentro do cartão.
