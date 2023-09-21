@@ -156,7 +156,7 @@ Aula 2 - 19/09/2023 - Dashboard de Produção - Palavra-chave: Prod30
 O PowerBI não reconhece fórmulas do Excel do arquivo importado, ele apenas apresenta o resultado das fórmulas.
 A lógica das fórmulas do PowerBI é diferente da lógica das fórmulas do Excel.
 
-- Site color-hex.com - Palletes - Popular Palletes - cor #008080 - Azul Petróleo ou qualquer outra que seja pertinente.
+- Site color-hex.com - Podemos pesquisar por cores que já tenhamos o código ou buscar novas corse em: Palletes - Popular Palletes - cor #008080 - Azul Petróleo ou qualquer outra que seja pertinente.
 
 - Site mycolor.space - Encontrar cores que combinam no design - colar o código Hex da cor e o site irá mostrar gradientes de corse que combinam com essa cor.
 
@@ -261,6 +261,85 @@ Análise:
 
 - Colocar os ícones no Dashboard - Inserir - Imagem;
 
+----------------------------------------------------------------------------------------------------------------
+
+Aula 3 - 20/09/2023 - Dashboard de RH - Palavra-chave: RH2023
+
+Dicas de Sites para inspirações de Dashboards:
+
+- Dribbble: dribbble.com - Pesquisar por Dashboard;
+- Pinterest: pinterest.com - Pesquisar por Dashboard;
+- Instant Eyedropper - instant-eyedropper.com - Fazer o Download - Ferramenta que indica o código hexadecimal de qualquer cor desejada - Ferramenta de Conta-Gotas.
+
+
+- O posicionamento dos dados no Dashboard deve seguir a hierarquia da leitura em Z.
+
+
+Análises:
+
+- Quantidade de Contratações;
+- Funcionários Ativos;
+- Gênero dos Funcionários;
+- Cálculo de TurnOver - Rotatividade - Desligados/Contratações;
+- Quantidade de Funcionários por Região Geográfica;
+
+Fórmulas:
+
+- COUNT(ColumnName) - Conta o número de registros que aparece na Coluna; ou
+- COUNTROWS(BaseFuncionarios) - Conta o número de linhas da tabela;
+
+- Cartão de Linhas Múltiplas - Autoexplicativo;
+
+- Gráficos Personalizados - Criar uma conta grátis no PowerBI - Utilizamos o gráfico Sparkline by OKVis - Mostra um gráfico de tendências dos dados necessários;
+
+- CALCULATE para ver os funcionários ativos - "=BLANK()" indica que deve ser Igual a Vazio;:
+	Func. Ativos = CALCULATE(
+		COUNTROWS(BaseFuncionarios), 
+		BaseFuncionarios[Data de Demissão]=BLANK()
+		)
+
+- "<>BLANK()" indica que deve ser Diferente de Vazio;
+
+- Calcular o número de funcionários demitidos: Desligamentos = [Contratações]-[Func. Ativos];
+- Alternativamente, podemos fazer um COUNTROWS baseado nos valores preenchidos da coluna Data de Demissão;
+
+- Turnover = [Desligamentos]/[Contratações];
+
+- Funcionários ativos por cidade - Utilizar Gráfico de Funil;
+
+- Gênero dos Funcionários - Gráfico de Pizza ou Gráfico de Rosca;
+
+
+- Gráficos das Hierarquias: Baseado nas colunas Área e Cargo - Contar quantos funcionários tem para cada cargo, para cada área;
+- Gráfico de Árvore Hierárquica;
+
+-  Tooltip ou Dica de Ferramenta - "Mini-Dashboard":
+	> Criar uma nova página (Novo Visual(?)) dentro do PowerBI e renomear para Tooltip;
+	> Configurações da Página - Informações da Página - Habilitar Permitir usar como dica de ferramenta;
+	> Exibição - Exibição de Página - Ajustar à Página: Zoom no mini-dashboard:
+		>> Mudar o plano de fundo para o Plano de Fundo Tooltip disponibilizado - Transparência para 0 e Ajustar;
+		>> Qtd Funcionários: Cartão;
+		>> Folha Salarial: outro Cartão;
+		>> Horas-Extras: Gráfico de Barras - Y Funcionários e X Valores.
+
+----------------------------------------------------------------------------------------------------------------
+
+Aula 4 - 21/09/2023 - Dashboard Financeiro - Palavra-chave: 
+
+- Para trocar a referência de arquivos .CSV no PowerBI:
+	> Abrir o Power Query - Configurações da Fonte de Dados - Alterar a Fonte;
+
+- Site imgbb - Cria links diretos para os bancos.
+
+- Usar Gráfico de Cascata para a demonstração dos valores ao longo dos meses.
+
+
+- Links das Imagens dos Bancos - os links estão na planilha BaseFinanceiro.
+	> https://drive.google.com/us?id=Codigo_da_imagem_no_Google_Drive (1BYk92rg...etc.);
+	> Para colocar todos os logos do mesmo tamanho: Configurações - Settings - Render Type - Weighted Circles;
+	> Cria filtros dinâmidos para cada banco.
+
+- Margem de Lucro - Lucro dividido pela Receita;
 
 
 
