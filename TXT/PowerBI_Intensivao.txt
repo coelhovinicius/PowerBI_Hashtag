@@ -324,23 +324,50 @@ Fórmulas:
 
 ----------------------------------------------------------------------------------------------------------------
 
-Aula 4 - 21/09/2023 - Dashboard Financeiro - Palavra-chave: 
+Aula 4 - 21/09/2023 - Dashboard Financeiro - Palavra-chave: HASHFIN
 
 - Para trocar a referência de arquivos .CSV no PowerBI:
 	> Abrir o Power Query - Configurações da Fonte de Dados - Alterar a Fonte;
 
-- Site imgbb - Cria links diretos para os bancos.
+- Site pt-br.imgbb.com - Cria links diretos para os bancos;
+- Site de logos: logodownload.org.
+
+
+Análises:
+
+- Total de recebimentos;
+- total de pagamentos;
+- Análise por banco;
+- Movimentações por tipo de pagamento;
+- Fluxo de caixa.
+
 
 - Usar Gráfico de Cascata para a demonstração dos valores ao longo dos meses.
 
 
 - Links das Imagens dos Bancos - os links estão na planilha BaseFinanceiro.
+	> Itaú - https://drive.google.com/uc?id=1BKFhTQGlpjR7NR7MrYeQxxYzT6-ZELgO;
+	> Nubank - https://drive.google.com/uc?id=16X4k9qWPE8TA3yrJ_smlfhgwWMmtBqFm;
+	> Bradesco - https://drive.google.com/uc?id=1GOg-FFxELL3IBzy-mxM9fVgDajjW1wXP;
+	> Safra - https://drive.google.com/uc?id=1fpaSt5BI6TBoQdgfEFVrSRGuyjvb5dHK;
+	> Santander - https://drive.google.com/uc?id=16X0LRlCh0cNBbt2pjVxnKdX-rFJIQF4w.
+
+	> https://drive.google.com/uc?id=1BKFhTQGlpjR7NR7MrYeQxxYzT6-ZELgO
 	> https://drive.google.com/us?id=Codigo_da_imagem_no_Google_Drive (1BYk92rg...etc.);
 	> Para colocar todos os logos do mesmo tamanho: Configurações - Settings - Render Type - Weighted Circles;
 	> Cria filtros dinâmidos para cada banco.
 
 - Margem de Lucro - Lucro dividido pela Receita;
 
+- Enlighten Data Story - Permite criar textos destacados:
+	> Texto: O número total de movimentações foi de X, das quais Y foram feitas via PIX, representando Z% das transações;
+	> Fazer as Medidas:
+		>> Total de Movimentações;
+		>> Movimentações via PIX;
+		>> % das Movimentações feitas por PIX.
 
+- Scroller - Permite mostrar dados "rolando" na tela:
+	> Imaginando uma Meta de 30% (sempre definido pelo plano de negócio ou por orientação da empresa);
+	> Nova Medida: Desvio da meta = Margem - 30%(0.3)
 
 
